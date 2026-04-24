@@ -8,3 +8,5 @@ public class RestartGame : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
         }
     }
+
+    

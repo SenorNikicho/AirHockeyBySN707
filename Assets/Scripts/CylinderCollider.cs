@@ -23,7 +23,7 @@ public class CylinderCollider : MonoBehaviour
         return Physics.CheckBox(position, new Vector3(radius, height, radius), rotation, mask) &&
             Physics.CheckCapsule(position - new Vector3(0, height, 0), position + new Vector3(0, height, 0), radius, mask);
     }
-
+    [ContextMenu("Build Collider")]
     public void BuildCollider()
     {
         ClearCollider();
