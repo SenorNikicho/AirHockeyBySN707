@@ -1,40 +1,27 @@
-using UnityEditor.ShaderGraph;
 using UnityEngine;
-using UnityEngine.TextCore;
 
 public class GoalTrigger : MonoBehaviour
 {
-    //public string teamColor = "Red"; // ← обязательно должно быть это поле!
-    public int score = 0;
+    public string teamColor = "Red";
+    private bool goalScored = false;   // флаг, чтобы не засчитывать повторно
 
     private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.CompareTag("RED_GATES"))
+        // Реагируем только на шайбу, и только если гол ещё не был засчитан
+        if (!goalScored && other.CompareTag("Puck"))
         {
-            Debug.Log($"ГОЛ! Шайба в воротах red");
-            GameManager.Instance.GoalScored("Red");
-        }
-        else if (other.CompareTag("BLUE_GATES"))
-        {
-            Debug.Log($"ГОЛ! Шайба в воротах blue");
-            GameManager.Instance.GoalScored("Blue");
-        }
-        else
-        {
-            GameManager.Instance.dfg = 0;
-        }
-        
-    }
-}
-/*
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            Debug.Log($"Симуляция гола в ворота {teamColor}");
+            //goalScored = true;
+            Debug.Log($"ГОЛ! Шайба в воротах {teamColor}");
             GameManager.Instance.GoalScored(teamColor);
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        // Когда шайба полностью покидает ворота, разрешаем засчитывать новый гол
+        if (other.CompareTag("Puck"))
+        {
+            goalScored = false;
+        }
+    }
 }
-*/

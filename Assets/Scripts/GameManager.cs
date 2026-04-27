@@ -41,26 +41,15 @@ public class GameManager : MonoBehaviour
 
     public void GoalScored(string teamColor)
     {
-        Debug.Log($"GoalScored вызван с teamColor = {teamColor}");
-
         if (gameEnded) return;
 
-        if (teamColor == "Red" && dfg == 0)
-        {
-            ResetPuck();
-            dfg = 0;
+        if (teamColor == "Red")
             scoreRed++;
-            UpdateScoreUI();
-        }
-        else if (teamColor == "Blue" && dfg == 0)
-        {
-            ResetPuck();
-            dfg = 0;
+        else if (teamColor == "Blue")
             scoreBlue++;
-            UpdateScoreUI();
-        }
-            
 
+        UpdateScoreUI();
+        Debug.Log($"Счёт: Красные {scoreRed} – Синие {scoreBlue}");
 
         if (scoreRed >= maxScore)
             EndGame("Красные");
@@ -68,9 +57,8 @@ public class GameManager : MonoBehaviour
             EndGame("Синие");
         else
             ResetPuck();
-        Debug.Log($"Счёт: Красные {scoreRed} - Синие {scoreBlue}"); // ← временный лог
-        UpdateScoreUI();
     }
+
 
     void UpdateScoreUI()
     {
@@ -89,21 +77,25 @@ public class GameManager : MonoBehaviour
 
     public void ResetPuck()
     {
-        
         if (puck2 != null)
         {
-            dfg = 1;
             Rigidbody rb = puck2.GetComponent<Rigidbody>();
-            Rigidbody pb = PlayerB.GetComponent<Rigidbody>();
-            Rigidbody pr = PlayerR.GetComponent<Rigidbody>();
-            rb.linearVelocity = Vector3.zero;   // вместо velocity
-            rb.angularVelocity = Vector3.zero;  // осталось без изменений
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
             puck2.transform.position = new Vector3(0, 0.14f, 0);
-            pb.linearVelocity = Vector3.zero;   // вместо velocity
-            pb.angularVelocity = Vector3.zero;  // осталось без изменений
+        }
+        if (PlayerB != null)
+        {
+            Rigidbody pb = PlayerB.GetComponent<Rigidbody>();
+            pb.linearVelocity = Vector3.zero;
+            pb.angularVelocity = Vector3.zero;
             PlayerB.transform.position = new Vector3(-5, 0.3f, 0);
-            pr.linearVelocity = Vector3.zero;   // вместо velocity
-            pr.angularVelocity = Vector3.zero;  // осталось без изменений
+        }
+        if (PlayerR != null)
+        {
+            Rigidbody pr = PlayerR.GetComponent<Rigidbody>();
+            pr.linearVelocity = Vector3.zero;
+            pr.angularVelocity = Vector3.zero;
             PlayerR.transform.position = new Vector3(5, 0.3f, 0);
         }
     }

@@ -1012,7 +1012,7 @@ GameObject:
   - component: {fileID: 256875157}
   m_Layer: 0
   m_Name: GatesRedTrigger
-  m_TagString: RED_GATES
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1029,7 +1029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94dea5f3538862045ad1ff4520dee43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoalTrigger
-  score: 0
+  teamColor: Red
 --- !u!65 &256875153
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1037,7 +1037,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 256875151}
-  m_Material: {fileID: 13400000, guid: 38c439a806fe2614196b120f462fc13e, type: 2}
+  m_Material: {fileID: 13400000, guid: 45ed5b8dd77b20b4b91f365c3593f6f5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1117,8 +1117,8 @@ Transform:
   m_GameObject: {fileID: 256875151}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 9.25, y: 0.5, z: -0}
-  m_LocalScale: {x: 3.5, y: 1.2, z: 0.5}
+  m_LocalPosition: {x: 9.5, y: 0.3, z: -0}
+  m_LocalScale: {x: 3.5, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1509,7 +1509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94dea5f3538862045ad1ff4520dee43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoalTrigger
-  score: 0
+  teamColor: Red
 --- !u!65 &305472314
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2383,7 +2383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94dea5f3538862045ad1ff4520dee43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoalTrigger
-  score: 0
+  teamColor: Red
 --- !u!65 &743913750
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4418,7 +4418,7 @@ GameObject:
   - component: {fileID: 1287792470}
   m_Layer: 0
   m_Name: GatesBlueTrigger
-  m_TagString: BLUE_GATES
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4435,7 +4435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94dea5f3538862045ad1ff4520dee43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoalTrigger
-  score: 0
+  teamColor: Blue
 --- !u!65 &1287792466
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4443,7 +4443,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1287792464}
-  m_Material: {fileID: 13400000, guid: 38c439a806fe2614196b120f462fc13e, type: 2}
+  m_Material: {fileID: 13400000, guid: 45ed5b8dd77b20b4b91f365c3593f6f5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -4523,8 +4523,8 @@ Transform:
   m_GameObject: {fileID: 1287792464}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -9.25, y: 0.5, z: 0}
-  m_LocalScale: {x: 3.5, y: 1.2, z: 0.5}
+  m_LocalPosition: {x: -9.5, y: 0.3, z: 0}
+  m_LocalScale: {x: 3.5, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4718,7 +4718,7 @@ GameObject:
   - component: {fileID: 1408409031}
   m_Layer: 0
   m_Name: box5,625
-  m_TagString: Untagged
+  m_TagString: Puck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4753,7 +4753,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -5532,7 +5532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94dea5f3538862045ad1ff4520dee43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoalTrigger
-  score: 0
+  teamColor: Red
 --- !u!1 &1739453962
 GameObject:
   m_ObjectHideFlags: 0
@@ -5764,7 +5764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94dea5f3538862045ad1ff4520dee43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoalTrigger
-  score: 0
+  teamColor: Red
 --- !u!1 &1879292638
 GameObject:
   m_ObjectHideFlags: 0
@@ -6529,6 +6529,10 @@ PrefabInstance:
       value: Puck
       objectReference: {fileID: 0}
     - target: {fileID: 307450171199162237, guid: 4d20aa78dd78a7742ab35e99fbaf84af, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 307450171199162237, guid: 4d20aa78dd78a7742ab35e99fbaf84af, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
@@ -6584,8 +6588,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2522232618664969607, guid: 4d20aa78dd78a7742ab35e99fbaf84af, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3679980974590983614, guid: 4d20aa78dd78a7742ab35e99fbaf84af, type: 3}
@@ -6682,9 +6685,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 307450171199162237, guid: 4d20aa78dd78a7742ab35e99fbaf84af, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6401499731730253814}
-    - targetCorrespondingSourceObject: {fileID: 307450171199162237, guid: 4d20aa78dd78a7742ab35e99fbaf84af, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6401499731730253820}
   m_SourcePrefab: {fileID: 100100000, guid: 4d20aa78dd78a7742ab35e99fbaf84af, type: 3}
 --- !u!4 &1120924180629755241
 Transform:
@@ -6901,19 +6901,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3679980974590983614, guid: 4d20aa78dd78a7742ab35e99fbaf84af, type: 3}
   m_PrefabInstance: {fileID: 292420833562099870}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6401499731730253820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 30169014575629550}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94dea5f3538862045ad1ff4520dee43e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GoalTrigger
-  score: 0
 --- !u!33 &6489635293341086444
 MeshFilter:
   m_ObjectHideFlags: 0
