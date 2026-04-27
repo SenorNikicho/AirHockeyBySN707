@@ -5,12 +5,16 @@ using TMPro; // если используешь TextMeshPro, иначе using Un
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public int dfg = 0;
 
     [Header("UI")]
     public GameObject gameOverPanel;
     public TMP_Text winnerText;   // или обычный Text
     public TMP_Text scoreRedText;
     public TMP_Text scoreBlueText;
+    public GameObject puck2;
+    public GameObject PlayerB;
+    public GameObject PlayerR;
 
     [Header("Settings")]
     public int maxScore = 7;
@@ -41,12 +45,22 @@ public class GameManager : MonoBehaviour
 
         if (gameEnded) return;
 
-        if (teamColor == "Red")
+        if (teamColor == "Red" && dfg == 0)
+        {
+            ResetPuck();
+            dfg = 0;
             scoreRed++;
-        else if (teamColor == "Blue")
+            UpdateScoreUI();
+        }
+        else if (teamColor == "Blue" && dfg == 0)
+        {
+            ResetPuck();
+            dfg = 0;
             scoreBlue++;
+            UpdateScoreUI();
+        }
+            
 
-        UpdateScoreUI();
 
         if (scoreRed >= maxScore)
             EndGame("Красные");
@@ -73,15 +87,24 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f; // пауза
     }
 
-    void ResetPuck()
+    public void ResetPuck()
     {
-        GameObject puck = GameObject.FindGameObjectWithTag("Puck");
-        if (puck != null)
+        
+        if (puck2 != null)
         {
-            Rigidbody rb = puck.GetComponent<Rigidbody>();
+            dfg = 1;
+            Rigidbody rb = puck2.GetComponent<Rigidbody>();
+            Rigidbody pb = PlayerB.GetComponent<Rigidbody>();
+            Rigidbody pr = PlayerR.GetComponent<Rigidbody>();
             rb.linearVelocity = Vector3.zero;   // вместо velocity
             rb.angularVelocity = Vector3.zero;  // осталось без изменений
-            puck.transform.position = new Vector3(0, 0.2f, 0);
+            puck2.transform.position = new Vector3(0, 0.14f, 0);
+            pb.linearVelocity = Vector3.zero;   // вместо velocity
+            pb.angularVelocity = Vector3.zero;  // осталось без изменений
+            PlayerB.transform.position = new Vector3(-5, 0.3f, 0);
+            pr.linearVelocity = Vector3.zero;   // вместо velocity
+            pr.angularVelocity = Vector3.zero;  // осталось без изменений
+            PlayerR.transform.position = new Vector3(5, 0.3f, 0);
         }
     }
 

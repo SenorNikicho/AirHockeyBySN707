@@ -10,7 +10,6 @@ public class MovementArrows : MonoBehaviour
     public void OnMove(InputValue value)
     {
         Vector2 input = value.Get<Vector2>();
-        Debug.Log($"Стрелки: {input}"); // ← добавить эту строку
         moveInput = input;
     }
 
@@ -19,7 +18,6 @@ public class MovementArrows : MonoBehaviour
         Vector3 move = new Vector3(moveInput.x, 0, moveInput.y);
         if (move != Vector3.zero)
         {
-            Debug.Log($"FixedUpdate: применяю силу {move.normalized * force}");
             rb.AddForce(move.normalized * force, ForceMode.Force);
         }
     }

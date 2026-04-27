@@ -1,19 +1,33 @@
+using UnityEditor.ShaderGraph;
 using UnityEngine;
+using UnityEngine.TextCore;
 
 public class GoalTrigger : MonoBehaviour
 {
-    public string teamColor = "Red"; // ← обязательно должно быть это поле!
+    //public string teamColor = "Red"; // ← обязательно должно быть это поле!
+    public int score = 0;
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"Что-то вошло в ворота {teamColor}: {other.name} (тег: {other.tag})");
-
-        if (other.CompareTag("Puck"))
+        
+        if (other.CompareTag("RED_GATES"))
         {
-            Debug.Log($"ГОЛ! Шайба в воротах {teamColor}");
-            GameManager.Instance.GoalScored(teamColor);
+            Debug.Log($"ГОЛ! Шайба в воротах red");
+            GameManager.Instance.GoalScored("Red");
         }
+        else if (other.CompareTag("BLUE_GATES"))
+        {
+            Debug.Log($"ГОЛ! Шайба в воротах blue");
+            GameManager.Instance.GoalScored("Blue");
+        }
+        else
+        {
+            GameManager.Instance.dfg = 0;
+        }
+        
     }
+}
+/*
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
@@ -23,3 +37,4 @@ public class GoalTrigger : MonoBehaviour
         }
     }
 }
+*/
